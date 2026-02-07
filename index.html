@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO & Meta Tags (Enhanced for Google Search) -->
+    <title>ابتكار | Abtikar - حلول رقمية، تصميم، وبرمجة (العراق & UK)</title>
+    <meta name="description" content="شركة ابتكار (Abtikar) الحلول الرقمية المتكاملة. نقدم خدمات التصميم الجرافيكي، برمجة المواقع والتطبيقات، والتسويق الرقمي. شركة مسجلة في بريطانيا وتعمل في العراق. تواصل معنا لرفع مستوى نشاطك التجاري.">
+    <meta name="keywords" content="ابتكار, Abtikar, تصميم جرافيكي, Graphic Design, تسويق الكتروني, Digital Marketing, برمجة, Web Development, العراق, Iraq, بريطانيا, UK, هوية بصرية, Branding, أنظمة إدارة, ERP Systems, تطبيقات موبايل, Mobile Apps, وكالة تسويق, Marketing Agency, تحسين محركات البحث, SEO, شعارات, Logo Design, بغداد, Baghdad, البصرة, Basra">
+    <meta name="author" content="Abtikar Ltd">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Structured Data for Google (Rich Snippets) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Abtikar",
+      "alternateName": "ابتكار",
+      "url": "https://abtikar.com",
+      "logo": "logo.png",
+      "description": "شركة حلول رقمية وإبداعية تقدم خدمات التصميم والبرمجة والتسويق.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IQ"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+9647733922521",
+        "contactType": "customer service",
+        "areaServed": ["IQ", "GB"],
+        "availableLanguage": ["Arabic", "English"]
+      },
+      "sameAs": [
+        "https://www.facebook.com/abtikar",
+        "https://www.instagram.com/abtikar"
+      ]
+    }
+    </script>
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="ابتكار | Abtikar - شريكك الرقمي">
+    <meta property="og:description" content="نحول رؤيتك إلى واقع رقمي بمعايير عالمية ولمسة عراقية.">
+    <meta property="og:image" content="logo.png">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts: Tajawal + Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons: FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Tajawal', 'sans-serif'],
+                        latin: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#FFC107', // Amber/Yellow
+                        primaryHover: '#FFD54F',
+                        secondary: '#94A3B8', // Slate Grey
+                        dark: '#000000', // Pure Black
+                        darker: '#0a0a0a',
+                        glass: 'rgba(255, 255, 255, 0.03)',
+                        glassBorder: 'rgba(255, 255, 255, 0.1)',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-15px)' },
+                        }
+                    },
+                    screens: {
+                        'xs': '375px',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Styles -->
+    <style>
+        body {
+            background-color: #000000;
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #000000;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, #FFC107, #333333);
+            border-radius: 4px;
+        }
+
+        /* Glassmorphism Utilities */
+        .glass-card {
+            background: rgba(20, 20, 20, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s ease;
+        }
+
+        .glass-card:hover {
+            border-color: rgba(255, 193, 7, 0.5);
+            box-shadow: 0 0 20px rgba(255, 193, 7, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .glass-nav {
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Text Gradient (Yellow to Grey) */
+        .text-gradient {
+            background: linear-gradient(135deg, #FFC107 0%, #ffffff 80%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* 3D Canvas Container */
+        #canvas-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        /* Loader */
+        .loader {
+            position: fixed;
+            inset: 0;
+            background: #000000;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.5s ease;
+        }
+
+        /* Selection Color */
+        ::selection {
+            background-color: #FFC107;
+            color: #000000;
+        }
+    </style>
+</head>
+<body class="antialiased" oncontextmenu="return false;">
+
+    <!-- Loader -->
+    <div id="loader" class="loader">
+        <div class="flex flex-col items-center gap-4">
+            <div class="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
+            <span class="text-primary font-bold tracking-widest text-sm">ABTIKAR LOADING</span>
+        </div>
+    </div>
+
+    <!-- 3D Background -->
+    <div id="canvas-container"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center relative">
+            
+            <!-- Logo Area -->
+            <a href="#" class="flex items-center gap-3 z-50 group">
+                <!-- Placeholder for Logo Image -->
+                <img src="logo.png" onerror="this.src='https://placehold.co/100x100/000000/FFC107?text=ABTIKAR'" alt="Abtikar Logo" class="h-10 w-auto object-contain group-hover:scale-105 transition-transform">
+                <div class="flex flex-col">
+                    <span class="text-xl md:text-2xl font-bold font-latin tracking-wide text-white">ABTIKAR</span>
+                    <span class="text-[10px] text-primary uppercase tracking-[0.2em] -mt-1 hidden md:block">Innovations</span>
+                </div>
+            </a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex gap-8 items-center text-sm font-medium text-gray-300">
+                <a href="#about" class="hover:text-primary transition-colors">عن الشركة</a>
+                <a href="#services" class="hover:text-primary transition-colors">خدماتنا</a>
+                <a href="#packages" class="hover:text-primary transition-colors">الباقات</a>
+                <a href="#software" class="hover:text-primary transition-colors">الحلول البرمجية</a>
+                <a href="#contact" class="px-6 py-2 rounded-lg bg-primary text-black font-bold hover:bg-white hover:shadow-[0_0_15px_rgba(255,255,255,0.4)] transition-all duration-300">اتصل بنا</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-2xl text-white z-50 p-2 relative focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden fixed inset-0 bg-[#000000] z-40 flex items-center justify-center transition-opacity duration-300">
+            <div class="flex flex-col p-6 gap-8 text-center text-xl">
+                <a href="#about" class="mobile-link text-gray-300 hover:text-primary">عن الشركة</a>
+                <a href="#services" class="mobile-link text-gray-300 hover:text-primary">خدماتنا</a>
+                <a href="#packages" class="mobile-link text-gray-300 hover:text-primary">الباقات</a>
+                <a href="#software" class="mobile-link text-gray-300 hover:text-primary">البرمجيات</a>
+                <a href="#contact" class="mobile-link text-primary font-bold border border-primary px-8 py-3 rounded-full">ابدأ مشروعك</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="hero" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <div class="container mx-auto px-4 relative z-10 grid md:grid-cols-2 gap-8 items-center">
+            
+            <!-- Text Content -->
+            <div class="text-center md:text-right order-2 md:order-1 space-y-6">
+                
+                <!-- Badges -->
+                <div class="flex flex-wrap gap-3 justify-center md:justify-start mb-2">
+                    <div class="px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-white text-[10px] md:text-xs font-bold tracking-wider flex items-center gap-2">
+                        <i class="fa-solid fa-crown text-primary"></i>
+                        REGISTERED IN UK
+                    </div>
+                    <div class="px-4 py-1.5 rounded-full bg-primary/10 border border-primary/30 text-primary text-[10px] md:text-xs font-bold tracking-wider">
+                        IRAQI OWNERSHIP
+                    </div>
+                </div>
+
+                <h1 class="text-4xl xs:text-5xl md:text-7xl font-bold leading-tight">
+                    حيث يلتقي الإبداع<br>
+                    <span class="text-gradient">بالتكنولوجيا</span>
+                </h1>
+                <p class="text-gray-400 text-base md:text-xl max-w-lg mx-auto md:mx-0 leading-relaxed">
+                    مؤسسة "ابتكار" تقدم حلولاً رقمية متكاملة. من قلب لندن إلى عمق السوق العراقي، نصنع الهويات البصرية، نطور الأنظمة البرمجية، ونقود حملاتك التسويقية بذكاء الخوارزميات.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-6">
+                    <a href="#packages" class="px-8 py-4 rounded-lg bg-primary text-black font-bold hover:bg-white hover:scale-105 transition-all duration-300 text-center shadow-[0_0_20px_rgba(255,193,7,0.4)]">
+                        استعرض باقات التصميم
+                    </a>
+                    
+                    <!-- WhatsApp Button -->
+                    <a href="https://wa.me/9647733922521" target="_blank" class="px-8 py-4 rounded-lg glass-card text-white hover:bg-[#25D366] hover:text-white transition-all duration-300 text-center flex items-center justify-center gap-3 group">
+                        <span>تواصل معنا عبر واتساب</span>
+                        <i class="fa-brands fa-whatsapp text-xl group-hover:scale-110 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Visual/Logo Presentation -->
+            <div class="order-1 md:order-2 flex justify-center relative">
+                <div class="absolute inset-0 bg-primary opacity-10 blur-[100px] rounded-full animate-pulse-slow"></div>
+                
+                <!-- 3D Floating Element -->
+                <div class="relative w-72 h-72 md:w-96 md:h-96 glass-card rounded-full p-6 animate-float flex items-center justify-center border-primary/20">
+                    <div class="w-full h-full rounded-full bg-black/50 overflow-hidden relative border border-white/5 flex items-center justify-center">
+                        <!-- Use Logo Here -->
+                        <img src="logo.png" onerror="this.src='https://placehold.co/400x400/000000/FFC107?text=ABTIKAR'" alt="Abtikar Identity" class="w-2/3 h-2/3 object-contain drop-shadow-[0_0_15px_rgba(255,193,7,0.3)]">
+                    </div>
+                    
+                    <!-- Floating Chips -->
+                    <div class="absolute -top-4 right-10 glass-card px-4 py-2 rounded-lg border-r-4 border-primary text-xs font-bold">
+                        Creative Design
+                    </div>
+                    <div class="absolute bottom-10 -left-6 glass-card px-4 py-2 rounded-lg border-r-4 border-white text-xs font-bold">
+                        Software Solutions
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 relative">
+        <div class="container mx-auto px-4">
+            <div class="glass-card rounded-3xl p-8 md:p-12 border-primary/20 relative overflow-hidden">
+                <div class="absolute -right-20 -top-20 w-64 h-64 bg-primary/5 rounded-full blur-[80px]"></div>
+                
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-3xl md:text-5xl font-bold mb-6">لماذا <span class="text-primary">ابتكار؟</span></h2>
+                        <p class="text-gray-300 leading-loose mb-6 text-justify">
+                            نحن لسنا مجرد شركة تصميم، نحن شريكك الاستراتيجي في النمو. بصفة رسمية مسجلة في المملكة المتحدة، ننقل المعايير العالمية في الجودة والاحترافية إلى السوق العراقي. نفهم عقلية المستهلك المحلي، ونستخدم أحدث التقنيات العالمية لمخاطبته.
+                        </p>
+                        
+                        <div class="grid grid-cols-2 gap-6 mt-8">
+                            <div class="bg-white/5 p-4 rounded-xl border border-white/5">
+                                <i class="fa-solid fa-earth-europe text-3xl text-primary mb-3"></i>
+                                <h3 class="font-bold text-white">معايير بريطانية</h3>
+                                <p class="text-xs text-gray-400 mt-1">مسجلة رسمياً وجودة عالمية</p>
+                            </div>
+                            <div class="bg-white/5 p-4 rounded-xl border border-white/5">
+                                <i class="fa-solid fa-handshake text-3xl text-white mb-3"></i>
+                                <h3 class="font-bold text-white">خبرة محلية</h3>
+                                <p class="text-xs text-gray-400 mt-1">فهم عميق للسوق العراقي</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Stats / Image Grid -->
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="glass-card p-6 rounded-2xl flex flex-col items-center justify-center text-center h-40 hover:scale-105 transition-transform duration-300">
+                            <span class="text-4xl font-bold text-primary mb-2 font-latin">+50</span>
+                            <span class="text-sm text-gray-300">علامة تجارية مطورة</span>
+                        </div>
+                        <div class="glass-card p-6 rounded-2xl flex flex-col items-center justify-center text-center h-40 bg-primary/10 border-primary/30 hover:scale-105 transition-transform duration-300">
+                            <span class="text-4xl font-bold text-white mb-2 font-latin">100%</span>
+                            <span class="text-sm text-gray-300">التزام بالمواعيد</span>
+                        </div>
+                        <div class="glass-card p-6 rounded-2xl flex flex-col items-center justify-center text-center h-40 hover:scale-105 transition-transform duration-300">
+                            <span class="text-4xl font-bold text-white mb-2 font-latin">+10</span>
+                            <span class="text-sm text-gray-300">أنظمة برمجية نشطة</span>
+                        </div>
+                        <div class="glass-card p-6 rounded-2xl flex flex-col items-center justify-center text-center h-40 hover:scale-105 transition-transform duration-300">
+                            <span class="text-4xl font-bold text-primary mb-2 font-latin">24/7</span>
+                            <span class="text-sm text-gray-300">دعم فني متواصل</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="text-primary font-bold tracking-wider text-sm uppercase font-latin">OUR SERVICES</span>
+                <h2 class="text-3xl md:text-5xl font-bold mt-2 text-white">نخدمك في <span class="text-gray-500">كافة المجالات</span></h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Service 1 -->
+                <div class="glass-card p-6 rounded-2xl group hover:bg-primary hover:text-black transition-colors duration-500">
+                    <div class="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center mb-4 text-primary group-hover:text-black group-hover:bg-black/10 transition-colors">
+                        <i class="fa-solid fa-pen-nib text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">التصميم والإخراج الفني</h3>
+                    <p class="text-sm text-gray-400 group-hover:text-black/70 leading-relaxed">
+                        تصميم هويات بصرية متكاملة (شعارات، مطبوعات) تعكس قيمة مشروعك.
+                    </p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="glass-card p-6 rounded-2xl group hover:bg-white hover:text-black transition-colors duration-500">
+                    <div class="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center mb-4 text-white group-hover:text-black group-hover:bg-black/10 transition-colors">
+                        <i class="fa-solid fa-video text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">المونتاج والإعلانات</h3>
+                    <p class="text-sm text-gray-400 group-hover:text-black/70 leading-relaxed">
+                        تحرير فيديو احترافي، موشن جرافيك، وإعلانات تجارية تخطف الأنظار.
+                    </p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="glass-card p-6 rounded-2xl group hover:bg-primary hover:text-black transition-colors duration-500">
+                    <div class="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center mb-4 text-primary group-hover:text-black group-hover:bg-black/10 transition-colors">
+                        <i class="fa-solid fa-bullhorn text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">التسويق الرقمي</h3>
+                    <p class="text-sm text-gray-400 group-hover:text-black/70 leading-relaxed">
+                        استراتيجيات تواكب تحديثات الخوارزميات في انستغرام، فيسبوك وتيك توك.
+                    </p>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="glass-card p-6 rounded-2xl group hover:bg-white hover:text-black transition-colors duration-500">
+                    <div class="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center mb-4 text-white group-hover:text-black group-hover:bg-black/10 transition-colors">
+                        <i class="fa-solid fa-code text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">الحلول البرمجية</h3>
+                    <p class="text-sm text-gray-400 group-hover:text-black/70 leading-relaxed">
+                        أنظمة إدارة، نقاط بيع (POS)، ومواقع ويب حديثة وسريعة.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section (Graphic Design) -->
+    <section id="packages" class="py-20 bg-white/5 relative">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center mb-16">
+                <span class="text-primary font-bold tracking-wider text-sm uppercase font-latin">PACKAGES</span>
+                <h2 class="text-3xl md:text-5xl font-bold mt-2">باقات <span class="text-primary">التصميم</span></h2>
+                <p class="text-gray-400 mt-4 max-w-2xl mx-auto">اختر الباقة التي تناسب حجم نشاطك التجاري. نقدم مرونة عالية في التعديلات.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                
+                <!-- Starter Package -->
+                <div class="glass-card p-8 rounded-2xl border-t-4 border-gray-500 hover:border-white transition-all">
+                    <h3 class="text-2xl font-bold text-white mb-2">البداية</h3>
+                    <p class="text-gray-400 text-sm mb-6">للمشاريع الناشئة والصغيرة</p>
+                    <div class="text-3xl font-bold text-white font-latin mb-8">$150<span class="text-sm font-normal text-gray-500">/شهر</span></div>
+                    
+                    <ul class="space-y-4 mb-8 text-sm text-gray-300">
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-primary"></i> 8 تصاميم سوشيال ميديا</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-primary"></i> تصميم ستوري (عدد 4)</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-primary"></i> تعديلات محدودة</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-primary"></i> كتابة محتوى بسيط</li>
+                    </ul>
+                    
+                    <a href="#contact" class="block w-full py-3 rounded-lg border border-white/20 text-center hover:bg-white hover:text-black transition-all">اطلب الآن</a>
+                </div>
+
+                <!-- Pro Package (Highlighted) -->
+                <div class="glass-card p-8 rounded-2xl border-t-4 border-primary relative transform md:-translate-y-4 shadow-[0_0_30px_rgba(255,193,7,0.15)] bg-white/5">
+                    <div class="absolute top-0 right-1/2 transform translate-x-1/2 -translate-y-1/2 bg-primary text-black px-4 py-1 rounded-full text-xs font-bold">الأكثر طلباً</div>
+                    <h3 class="text-2xl font-bold text-primary mb-2">النمو</h3>
+                    <p class="text-gray-400 text-sm mb-6">للشركات الطموحة والمتوسطة</p>
+                    <div class="text-3xl font-bold text-white font-latin mb-8">$300<span class="text-sm font-normal text-gray-500">/شهر</span></div>
+                    
+                    <ul class="space-y-4 mb-8 text-sm text-gray-300">
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-primary"></i> 15 تصميم سوشيال ميديا</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-primary"></i> 1 موشن جرافيك (15 ثانية)</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-primary"></i> تصميم هايلايت انستغرام</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-primary"></i> خطة محتوى شهرية</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-primary"></i> تعديلات مفتوحة</li>
+                    </ul>
+                    
+                    <a href="#contact" class="block w-full py-3 rounded-lg bg-primary text-black font-bold text-center hover:scale-105 transition-all">اطلب الآن</a>
+                </div>
+
+                <!-- Elite Package -->
+                <div class="glass-card p-8 rounded-2xl border-t-4 border-gray-500 hover:border-white transition-all">
+                    <h3 class="text-2xl font-bold text-white mb-2">المؤسسات</h3>
+                    <p class="text-gray-400 text-sm mb-6">حلول شاملة وسيطرة كاملة</p>
+                    <div class="text-3xl font-bold text-white font-latin mb-8">مخصص</div>
+                    
+                    <ul class="space-y-4 mb-8 text-sm text-gray-300">
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-primary"></i> تغطية يومية شاملة</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-primary"></i> إنتاج فيديو وإعلانات</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-primary"></i> إدارة كاملة للحسابات</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-primary"></i> تقارير أداء شهرية</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-primary"></i> مدير حساب خاص</li>
+                    </ul>
+                    
+                    <a href="#contact" class="block w-full py-3 rounded-lg border border-white/20 text-center hover:bg-white hover:text-black transition-all">تواصل للتسعير</a>
+                </div>
+
+            </div>
+            
+            <div class="text-center mt-10">
+                <p class="text-gray-500 text-sm">تنويه: يمكن تخصيص طلبات فردية خارج الباقات حسب الحاجة.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Software Solutions Section -->
+    <section id="software" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="glass-card p-8 md:p-12 rounded-3xl border border-white/10 flex flex-col md:flex-row items-center gap-10">
+                <div class="md:w-1/2">
+                    <span class="text-primary font-bold text-sm uppercase">TECH SOLUTIONS</span>
+                    <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-4">أنظمة إدارة ذكية</h2>
+                    <p class="text-gray-300 mb-6 leading-loose">
+                        لا تقتصر خدماتنا على الجانب الفني، بل نقدم حلولاً برمجية قوية لتنظيم أعمالك. سواء كنت تحتاج لنظام نقاط بيع (POS) لمطعمك، أو نظام إدارة مخازن (ERP) لشركتك، فريقنا البرمجي جاهز للتنفيذ.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm">أنظمة مطاعم</span>
+                        <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm">إدارة مبيعات</span>
+                        <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm">تطبيقات موبايل</span>
+                    </div>
+                </div>
+                <div class="md:w-1/2 relative">
+                    <div class="absolute inset-0 bg-primary/20 blur-[60px] rounded-full"></div>
+                    <div class="relative glass-card p-6 rounded-xl border-white/10">
+                        <!-- Mockup Code UI -->
+                        <div class="flex gap-2 mb-4">
+                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                        </div>
+                        <div class="space-y-2 font-latin text-sm font-mono text-gray-400">
+                            <p><span class="text-purple-400">class</span> <span class="text-yellow-400">AbtikarSystem</span> {</p>
+                            <p class="pl-4">details: <span class="text-green-400">"High Performance"</span>;</p>
+                            <p class="pl-4">security: <span class="text-green-400">"Encrypted"</span>;</p>
+                            <p class="pl-4">support: <span class="text-blue-400">true</span>;</p>
+                            <p class="pl-4"><span class="text-purple-400">function</span> <span class="text-blue-400">optimize</span>() {</p>
+                            <p class="pl-8 text-gray-500">// Growing your business...</p>
+                            <p class="pl-4">}</p>
+                            <p>}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 relative overflow-hidden">
+        <div class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-primary/10 to-transparent pointer-events-none"></div>
+
+        <div class="container mx-auto px-4">
+            <div class="glass-card rounded-3xl p-8 md:p-16 text-center max-w-4xl mx-auto border border-white/10">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">جاهز للبدء؟</h2>
+                <p class="text-gray-300 mb-10 text-lg">سواء كنت تريد هوية بصرية، باقة تسويق، أو نظام برمجي، نحن هنا للاستماع.</p>
+                
+                <!-- Email Form Updated -->
+                <form action="mailto:jonlast179@gmail.com" method="post" enctype="text/plain" class="space-y-4 text-right max-w-lg mx-auto mb-8">
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <input type="text" name="name" placeholder="الاسم الكامل" class="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-primary transition-colors text-white placeholder-gray-500">
+                        <input type="text" name="company" placeholder="اسم الشركة / المشروع" class="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-primary transition-colors text-white placeholder-gray-500">
+                    </div>
+                    <input type="email" name="email" placeholder="البريد الإلكتروني" class="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-primary transition-colors text-white placeholder-gray-500">
+                    <select name="service" class="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-primary transition-colors text-white text-gray-500">
+                        <option value="" disabled selected>نوع الخدمة المطلوبة</option>
+                        <option value="branding" class="text-black">تصميم وهوية بصرية</option>
+                        <option value="marketing" class="text-black">تسويق رقمي</option>
+                        <option value="software" class="text-black">حلول برمجية</option>
+                        <option value="other" class="text-black">طلب خاص</option>
+                    </select>
+                    <textarea name="message" rows="4" placeholder="تفاصيل المشروع..." class="w-full bg-black/40 border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-primary transition-colors text-white placeholder-gray-500"></textarea>
+                    
+                    <button type="submit" class="w-full bg-primary text-black font-bold py-4 rounded-lg hover:bg-white transition-all duration-300 shadow-[0_4px_20px_rgba(255,193,7,0.3)]">
+                        إرسال الطلب عبر البريد
+                    </button>
+                </form>
+
+                <div class="flex justify-center items-center gap-6 text-gray-400 text-sm">
+                    <span class="flex items-center gap-2"><i class="fa-solid fa-envelope text-primary"></i> jonlast179@gmail.com</span>
+                    <span class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-primary"></i> London / Baghdad</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-white/10 py-10 text-center relative z-10">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-center gap-2 mb-6">
+                 <img src="logo.png" onerror="this.style.display='none'" alt="Logo" class="h-8 w-auto grayscale opacity-50 hover:opacity-100 transition-all">
+                 <span class="text-xl font-bold font-latin text-white">ABTIKAR</span>
+            </div>
+            
+            <div class="flex flex-wrap justify-center gap-6 mb-8">
+                <!-- Facebook -->
+                <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-[#1877F2] hover:text-white transition-all transform hover:scale-110">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <!-- Instagram -->
+                <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-[#E4405F] hover:text-white transition-all transform hover:scale-110">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <!-- LinkedIn -->
+                <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-[#0A66C2] hover:text-white transition-all transform hover:scale-110">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                <!-- WhatsApp -->
+                <a href="https://wa.me/9647733922521" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-[#25D366] hover:text-white transition-all transform hover:scale-110">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+            </div>
+            <p class="text-gray-600 text-sm">
+                &copy; 2026 Abtikar Ltd. جميع الحقوق محفوظة.<br>
+                <span class="text-xs mt-1 block">Registered in UK, Operating in Iraq.</span>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Three.js & Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script>
+        // --- 1. Three.js Logic (Yellow & Grey Particles) ---
+        function initThreeJS() {
+            const container = document.getElementById('canvas-container');
+            if (!container) return;
+
+            const scene = new THREE.Scene();
+            // Fog matches background color #000000
+            scene.fog = new THREE.FogExp2(0x000000, 0.002);
+
+            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            camera.position.z = 30;
+
+            const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            container.appendChild(renderer.domElement);
+
+            // Particles 1: Primary Yellow
+            const geometry = new THREE.BufferGeometry();
+            const particlesCount = 1000; 
+            const posArray = new Float32Array(particlesCount * 3);
+
+            for(let i = 0; i < particlesCount * 3; i++) {
+                posArray[i] = (Math.random() - 0.5) * 80; 
+            }
+
+            geometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+
+            const material = new THREE.PointsMaterial({
+                size: 0.15,
+                color: 0xFFC107, // Amber/Yellow
+                transparent: true,
+                opacity: 0.8,
+                blending: THREE.AdditiveBlending
+            });
+
+            const particlesMesh = new THREE.Points(geometry, material);
+            scene.add(particlesMesh);
+
+            // Particles 2: White/Grey
+            const geometry2 = new THREE.BufferGeometry();
+            const posArray2 = new Float32Array(800 * 3);
+            for(let i = 0; i < 800 * 3; i++) {
+                posArray2[i] = (Math.random() - 0.5) * 100;
+            }
+            geometry2.setAttribute('position', new THREE.BufferAttribute(posArray2, 3));
+            const material2 = new THREE.PointsMaterial({
+                size: 0.1,
+                color: 0xffffff, // White
+                transparent: true,
+                opacity: 0.3,
+                blending: THREE.AdditiveBlending
+            });
+            const particlesMesh2 = new THREE.Points(geometry2, material2);
+            scene.add(particlesMesh2);
+
+            // Animation Loop
+            let mouseX = 0;
+            let mouseY = 0;
+
+            document.addEventListener('mousemove', (event) => {
+                mouseX = event.clientX / window.innerWidth - 0.5;
+                mouseY = event.clientY / window.innerHeight - 0.5;
+            });
+
+            const clock = new THREE.Clock();
+
+            function animate() {
+                const elapsedTime = clock.getElapsedTime();
+
+                // Rotate logic
+                particlesMesh.rotation.y = elapsedTime * 0.03;
+                particlesMesh.rotation.x = mouseY * 0.2;
+                particlesMesh.rotation.y += mouseX * 0.2;
+                
+                particlesMesh2.rotation.y = elapsedTime * 0.02 + 1;
+                particlesMesh2.rotation.x = -mouseY * 0.1;
+
+                renderer.render(scene, camera);
+                requestAnimationFrame(animate);
+            }
+
+            animate();
+
+            // Resize Handle
+            window.addEventListener('resize', () => {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            });
+        }
+
+        // --- 2. Main Logic ---
+        window.onload = function() {
+            // Loader
+            const loader = document.getElementById('loader');
+            if(loader) {
+                loader.style.opacity = '0';
+                setTimeout(() => loader.remove(), 500);
+            }
+
+            initThreeJS();
+            gsap.registerPlugin(ScrollTrigger);
+
+            // GSAP Animations
+            gsap.utils.toArray('section').forEach(section => {
+                gsap.from(section.children, {
+                    y: 30,
+                    opacity: 0,
+                    duration: 0.8,
+                    stagger: 0.1,
+                    ease: 'power2.out',
+                    scrollTrigger: {
+                        trigger: section,
+                        start: 'top 80%',
+                    }
+                });
+            });
+
+            // Mobile Menu
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            const links = document.querySelectorAll('.mobile-link');
+            
+            function toggleMenu() {
+                menu.classList.toggle('hidden');
+                const icon = btn.querySelector('i');
+                if (menu.classList.contains('hidden')) {
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                    document.body.style.overflow = 'auto';
+                } else {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-xmark');
+                    document.body.style.overflow = 'hidden';
+                }
+            }
+
+            if(btn) btn.addEventListener('click', toggleMenu);
+            links.forEach(link => link.addEventListener('click', toggleMenu));
+        };
+    </script>
+</body>
+</html>
